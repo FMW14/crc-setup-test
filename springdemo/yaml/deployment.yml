@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: springdemo
+    version: v1
+  name: springdemo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: springdemo
+      version: v1
+  template:
+    metadata:
+      labels:
+        app: springdemo
+        version: v1
+    spec:
+      containers:
+        - env:
+            - name: JAVA_OPTIONS
+              value: -Xms128m -Xmx128m -Xmn128m
+          name: springdemo1
+          image: image-registry.openshift-image-registry.svc:5000/rest-test/springdemo:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+              name: http
+              protocol: TCP
+          resources:
+            requests:
+              memory: "200Mi"
+              cpu: "128m"
+            limits:
+              memory: "400Mi"
+              cpu: "256m"
+          securityContext:
+            privileged: false
+          volumeMounts:
+          - name: vol1
+            mountPath: /test1
+      volumes:
+      - name: vol1
+        emptyDir: {}

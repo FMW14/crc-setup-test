@@ -1,0 +1,5 @@
+19:51:17.325 [main] INFO  c.e.springDemoHW.SpringDemoHwApplicationTests - Starting SpringDemoHwApplicationTests on centos8 with PID 31516 (started by ilya in /home/ilya/crc-setup-test/springdemo)
+19:51:17.325 [main] INFO  c.e.springDemoHW.SpringDemoHwApplicationTests - No active profile set, falling back to default profiles: default
+19:51:18.579 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+19:51:18.820 [main] INFO  c.e.springDemoHW.SpringDemoHwApplicationTests - Started SpringDemoHwApplicationTests in 1.841 seconds (JVM running for 2.777)
+19:51:19.122 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
