@@ -1,0 +1,13 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: ServiceEntry
+metadata:
+  name: kafka-external
+spec:
+  hosts:
+    - kafka.test
+  ports:
+    - number: 9092
+      name: tcp-9092
+      protocol: TCP
+  resolution: DNS
+  location: MESH_EXTERNAL
